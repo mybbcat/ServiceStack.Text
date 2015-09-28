@@ -211,9 +211,9 @@ namespace ServiceStack
             var hasFeature = (requestedFeature & licenseFeature) == requestedFeature;
             if (hasFeature)
                 return;
-
-            if (actualUsage > allowedUsage)
-                throw new LicenseException(message.Fmt(allowedUsage)).Trace();
+            //移除使用限制
+//            if (actualUsage > allowedUsage)
+//                throw new LicenseException(message.Fmt(allowedUsage)).Trace();
         }
 
         public static bool HasLicensedFeature(LicenseFeature feature)
